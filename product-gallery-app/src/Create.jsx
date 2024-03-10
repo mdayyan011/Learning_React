@@ -22,12 +22,18 @@ const Create = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name);
-    console.log(price);
-    console.log(desc);
-    console.log(imgSrc);
-    console.log(category);
-    console.log('Hey there I got submitted');
+    fetch('https://fakestoreapi.com/products', {
+      method: 'POST',
+      body: JSON.stringify({
+        title: name,
+        price: price,
+        description: desc,
+        image: imgSrc,
+        category: category,
+      }),
+    })
+      .then((res) => res.json())
+      .then((json) => console.log(json));
   };
   return (
     <>
