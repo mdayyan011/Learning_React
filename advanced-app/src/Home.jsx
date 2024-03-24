@@ -5,6 +5,9 @@ const Home = () => {
       <Link to='/'>
         <li>Home </li>
       </Link>
+      <Link to='/first'>
+        <li>First </li>
+      </Link>
       <Link to='/login'>
         <li>Login </li>
       </Link>

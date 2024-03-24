@@ -4,6 +4,7 @@ import Home from './Home';
 import OptimizedMain from './OptimizedMain';
 import Error from './Error';
 import Read from './Read';
+import First from './First';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const myRouter = createBrowserRouter([
@@ -22,6 +23,10 @@ const myRouter = createBrowserRouter([
   {
     path: '/read',
     element: <Read />,
+  },
+  {
+    path: '/first',
+    element: <First />,
   },
   {
     path: '*',
