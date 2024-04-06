@@ -12,10 +12,12 @@ code {
     monospace;
 }
 
-/* h1 {
-  color: purple;
-} */
-
-div {
-  text-align: center;
+.emp-container {
+  display: flex;
+}
+h1 {
+  padding-right: 3vw;
+}
+button {
+  margin: 10px;
 }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Emp = () => {
+const Product = () => {
   let [empDetails, setEmpDetails] = useState([
     {
       id: 1,
@@ -22,8 +22,21 @@ const Emp = () => {
       name: 'ABC4',
       dept: 'Dept14',
     },
-    
   ]);
+  /*
+    useEffect(()=>{
+    whatever code
+    },[dependency list])
+
+    */
+
+  useEffect(() => {
+    // fetch(url)
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }, [empDetails]);
+
   const handleClick = (id) => {
     console.log('I am clicked ' + id);
     // 1 != 4
@@ -35,7 +48,7 @@ const Emp = () => {
   };
   return (
     <>
-      <h1>Emp Details</h1>
+      <h1>Product Details</h1>
       {empDetails.map((emp) => (
         <div key={emp.id} className='emp-container'>
           <h1 className='emp-child-heading'>{emp.name}</h1>
@@ -46,4 +59,4 @@ const Emp = () => {
     </>
   );
 };
-export default Emp;
+export default Product;
